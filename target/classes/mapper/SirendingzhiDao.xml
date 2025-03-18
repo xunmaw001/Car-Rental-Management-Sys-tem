@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SirendingzhiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.SirendingzhiEntity" id="sirendingzhiMap">
+        <result property="qichemingcheng" column="qichemingcheng"/>
+        <result property="qicheleixing" column="qicheleixing"/>
+        <result property="yanse" column="yanse"/>
+        <result property="zuowei" column="zuowei"/>
+        <result property="pailiang" column="pailiang"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="riqi" column="riqi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.SirendingzhiVO" >
+		SELECT * FROM sirendingzhi  sirendingzhi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.SirendingzhiVO" >
+		SELECT  sirendingzhi.* FROM sirendingzhi  sirendingzhi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.SirendingzhiView" >
+
+		SELECT  sirendingzhi.* FROM sirendingzhi  sirendingzhi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.SirendingzhiView" >
+		SELECT * FROM sirendingzhi  sirendingzhi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
